@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Frontend workflow demo page</title>
+<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+<body>
+<div id="outercontainer">
+    <img src="assets/img/demo.png" alt="here should be demo image"/>
+    <div id="container">
+        <div id="notbuilt">
+            <h1>Server works but project not built yet</h1>
+        </div>
+        <div id="built" style="display: none;">
+            <h1>Server works and project built</h1>
+            <ul>
+                <li>you can see some background</li>
+                <li id="printer"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/vendor/requirejs/require.js"></script>
+<script>
+    requirejs.config({
+        baseUrl: '/frontendworkflow/assets/js'
+    });
+    require(['config'], function () {
+        require(['layout', 'app/main']);
+    });
+</script>
+
+</body>
+</html>

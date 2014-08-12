@@ -1,0 +1,15 @@
+packer validate example.json
+
+packer build -only virtualbox-iso example.json
+
+packer build -only amazon-ebs -var 'aws_access_key=YOUR_ACCESS_KEY' -var 'aws_secret_key=YOUR_SECRET_KEY'
+
+vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_aws.box
+
+vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_virtualbox.box
+
+vagrant init ubuntu-14.04-server-amd64
+
+vagrant up --provider=virtualbox
+
+AWS_ACCESS_KEY=YOUR_ACCESS_KEY AWS_SECRET_KEY=YOUR_SECRET_KEY vagrant up --provider=aws

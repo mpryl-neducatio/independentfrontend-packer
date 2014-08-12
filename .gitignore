@@ -1,0 +1,5 @@
+output-virtualbox-iso
+.vagrant
+packer_cache
+ubuntu-14.04-server-amd64_aws.box
+ubuntu-14.04-server-amd64_virtualbox.box

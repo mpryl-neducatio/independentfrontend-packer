@@ -1,0 +1,10 @@
+#js libraries
+/bower_components
+/node_modules
+/npm-debug.log
+
+#frontend assets
+/assets/js/vendor
+/assets/css
+!/assets/css/.gitkeep
+/web/assets
