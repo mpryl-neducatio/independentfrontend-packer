@@ -37,13 +37,17 @@ The goal of this project is to:
 2. The output should be `Template validated successfully.`
 3. If there is everything ok, we can build our virtualbox image with command `packer build -only virtualbox-iso example.json`
 4. This will take a while ... ;)
-4. In the end this build should create catalog with virtualbox image and box named `ubuntu-14.04-server-amd64_virtualbox.box`
-5. You've just created, provisioned and save image of your dev server.
-6. You can add just created box to vagrant `vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_virtualbox.box`
-7. And start working starting up your machine with `vagrant up --provider=virtualbox`
+5. In the end this build should create catalog with virtualbox image and box named `ubuntu-14.04-server-amd64_virtualbox.box`
+6. You've just created, provisioned and save image of your dev server.
+7. You can add just created box to vagrant `vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_virtualbox.box`
+8. And start working starting up your machine with `vagrant up --provider=virtualbox`
 
 3. Build prod machine
 ---
+
+There is one **PROBLEM** I do not really know *puppet* and I do not know how to change from vagrant to ubuntu user in puppet provisioning files. So you have to change **all** occurances of `vagrant` in folder `provisioning\manifests\modules` to `ubuntu` and rename file `provisioning\manifests\modules\server\manifest\apache\configured_for_vagrant.pp` to `provisioning\manifests\modules\server\manifest\apache\configured_for_ubuntu.pp`.
+
+**Sory for that**
 
 1. Be sure you're in the the project root directory (where the example.json is located) and type `packer validate example.json`
 2. The output should be `Template validated successfully.`
@@ -51,9 +55,9 @@ The goal of this project is to:
 4. In the end this build should create ami on amazon and box named `ubuntu-14.04-server-amd64_aws.box`
 5. You've just created, provisioned and save image of your prod server on your amazon account.
 6. You can now start new micro instance on amazon using just created ami or you can use it as your development machine using vagrant-aws provider plugin.
-6. To use it as your development machine add just created box to vagrant `vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_aws.box`
-7. And start working starting up your machine with `AWS_ACCESS_KEY=YOUR_ACCESS_KEY AWS_SECRET_KEY=YOUR_SECRET_KEY vagrant up --provider=aws`
-8. I have not tested using this machine with vagrant, because on Windows there are problems with connecting by SSH using private key.
+7. To use it as your development machine add just created box to vagrant `vagrant box add ubuntu-14.04-server-amd64 ubuntu-14.04-server-amd64_aws.box`
+8. And start working starting up your machine with `AWS_ACCESS_KEY=YOUR_ACCESS_KEY AWS_SECRET_KEY=YOUR_SECRET_KEY vagrant up --provider=aws`
+9. I have not tested using this machine with vagrant, because on Windows there are problems with connecting by SSH using private key.
 
 ###All of that was created and tested on laptop with Windows 8 operating system and I don't make promise that this will work as it is on every system
 
