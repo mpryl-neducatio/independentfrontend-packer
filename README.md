@@ -59,7 +59,9 @@ There is one **PROBLEM** I do not really know *puppet* and I do not know how to 
 8. And start working starting up your machine with `AWS_ACCESS_KEY=YOUR_ACCESS_KEY AWS_SECRET_KEY=YOUR_SECRET_KEY vagrant up --provider=aws`
 9. I have not tested using this machine with vagrant, because on Windows there are problems with connecting by SSH using private key.
 
-###All of that was created and tested on laptop with Windows 8 operating system and I don't make promise that this will work as it is on every system
+####All of that was created and tested on laptop with Windows 8 operating system and I don't make promise that this will work as it is on every system
+
+####Pull request are very welcom :D
 
 4. What's next?
 ---
