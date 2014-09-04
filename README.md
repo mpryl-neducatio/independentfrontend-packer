@@ -51,7 +51,7 @@ There is one **PROBLEM** I do not really know *puppet* and I do not know how to 
 
 1. Be sure you're in the the project root directory (where the example.json is located) and type `packer validate example.json`
 2. The output should be `Template validated successfully.`
-3. If there is everything ok, we can build our amazon ebs image with command `packer build -only amazon-ebs -var 'aws_access_key=YOUR_ACCESS_KEY' -var 'aws_secret_key=YOUR_SECRET_KEY'`
+3. If there is everything ok, we can build our amazon ebs image with command `packer build -only amazon-ebs -var 'aws_access_key=YOUR_ACCESS_KEY' -var 'aws_secret_key=YOUR_SECRET_KEY' example.json`
 4. In the end this build should create ami on amazon and box named `ubuntu-14.04-server-amd64_aws.box`
 5. You've just created, provisioned and save image of your prod server on your amazon account.
 6. You can now start new micro instance on amazon using just created ami or you can use it as your development machine using vagrant-aws provider plugin.
