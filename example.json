@@ -84,15 +84,10 @@
     ]
   },{
     "type": "puppet-masterless",
+    "execute_command": "{{.FacterVars}} sudo -E puppet apply --verbose --modulepath='{{.ModulePath}}:/etc/puppet/modules' --manifestdir='{{.ManifestDir}}' --detailed-exitcodes {{.ManifestFile}}",
     "manifest_file": "./provisioning/manifests/site.pp",
     "manifest_dir": "./provisioning/manifests",
     "module_paths": ["./provisioning/manifests/modules"]
-  },{
-    "type": "shell",
-    "execute_command": "echo 'vagrant'|{{.Vars}} sudo -S -E bash '{{.Path}}'",
-    "scripts": [
-      "scripts/node.sh"
-    ]
   }],
   "post-processors": [{
     "output": "ubuntu-14.04-server-amd64_{{.Provider}}.box",

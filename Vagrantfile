@@ -28,6 +28,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 1024
   end
 
+  # config.vm.provision :puppet do |puppet|
+  #   puppet.manifests_path = "provisioning/manifests"
+  #   puppet.manifest_file  = "site.pp"
+  #   puppet.module_path = ["provisioning/manifests/modules"]
+  # end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.

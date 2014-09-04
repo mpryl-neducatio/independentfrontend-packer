@@ -1,6 +1,6 @@
 class server::frontend::nodejs {
   package { ['nodejs', 'npm']:
-    ensure => 'installed',
+    ensure => 'installed'
   }
   file { "/usr/bin/node":
     require  => Package['nodejs'],
@@ -13,5 +13,15 @@ class server::frontend::nodejs {
     ensure   => "directory",
     owner => "vagrant",
     group => "vagrant"
+  }
+  package { 'bower':
+    ensure   => '1.3.8',
+    provider => 'npm',
+    require   => Package["npm"],
+  }
+  package { 'grunt-cli':
+    ensure   => present,
+    provider => 'npm',
+    require   => Package["npm"],
   }
 }
