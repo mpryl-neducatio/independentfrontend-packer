@@ -1,7 +1,7 @@
 class server::examplesite::examplesite {
-  file { "/home/vagrant/www/frontendworkflow":
+  file { "/home/ubuntu/www/frontendworkflow":
           force => true,
           ensure   => "link",
-          target => "/vagrant/example_staticpage/web",
+          target => "/ubuntu/example_staticpage/web",
   }
 }

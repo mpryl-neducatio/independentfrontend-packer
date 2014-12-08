@@ -1,6 +1,6 @@
 class symfony::misc::misc {
 
-  $mountpoint = "/home/vagrant/tmpfscache"
+  $mountpoint = "/home/ubuntu/tmpfscache"
   file { $mountpoint:
     ensure => "directory",
   }

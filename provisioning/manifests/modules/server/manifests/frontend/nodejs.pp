@@ -8,14 +8,14 @@ class server::frontend::nodejs {
     ensure   => "link",
     target => "/usr/bin/nodejs"
   }
-  file { "/home/vagrant/tmp":
+  file { "/home/ubuntu/tmp":
     force => true,
     ensure   => "directory",
-    owner => "vagrant",
-    group => "vagrant"
+    owner => "ubuntu",
+    group => "ubuntu"
   }
   package { 'bower':
-    ensure   => '1.3.8',
+    ensure   => present,
     provider => 'npm',
     require   => Package["npm"],
   }
