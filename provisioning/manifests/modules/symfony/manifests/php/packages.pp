@@ -44,12 +44,12 @@ package { "php5-xdebug" :
 }
 package { "php5-pgsql" :
   ensure => installed,
-  require => Package["php5", "postgresql"],
+  require => Package["php5"],
   notify => Service["apache2"],
 }
 package { "php5-mysql" :
   ensure => installed,
-  require => Package["php5", "mysql-server"],
+  require => Package["php5"],
   notify => Service["apache2"],
 }
 package { "php-apc" :
