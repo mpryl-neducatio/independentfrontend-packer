@@ -5,4 +5,7 @@ class server::workplace::workflow {
   package { 'git':
       ensure => present,
   }
+  package { 'p7zip-full':
+      ensure => present,
+  }
 }
