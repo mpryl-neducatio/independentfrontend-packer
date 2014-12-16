@@ -8,4 +8,7 @@ class server::workplace::workflow {
   package { 'p7zip-full':
       ensure => present,
   }
+  package { 'mysql-client':
+      ensure => present,
+  }
 }
