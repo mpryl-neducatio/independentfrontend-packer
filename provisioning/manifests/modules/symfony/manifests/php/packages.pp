@@ -37,16 +37,16 @@ package { "php5-sqlite" :
   require => Package["php5"],
   notify => Service["apache2"],
 }
-package { "php5-xdebug" :
-  ensure => installed,
-  require => Package["php5"],
-  notify => Service["apache2"],
-}
-package { "php5-pgsql" :
-  ensure => installed,
-  require => Package["php5"],
-  notify => Service["apache2"],
-}
+#package { "php5-xdebug" :
+#  ensure => installed,
+#  require => Package["php5"],
+#  notify => Service["apache2"],
+#}
+#package { "php5-pgsql" :
+#  ensure => installed,
+#  require => Package["php5"],
+#  notify => Service["apache2"],
+#}
 package { "php5-mysql" :
   ensure => installed,
   require => Package["php5"],
